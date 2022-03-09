@@ -60,3 +60,10 @@ module "s3" {
   source         = "./s3"
   s3_bucket_name = "arvind-bucket-2022"
 }
+
+module "route53" {
+  source   = "./route53"
+  hostname = ["test1", "test2"]
+  arecord  = ["10.0.1.11", "10.0.1.12"]
+  vpc_id   = "${module.vpc.vpc_id}"
+}
