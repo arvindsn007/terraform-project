@@ -55,3 +55,8 @@ module "cloudwatch" {
   sns_topic   = "${module.sns_topic.sns_arn}"
   instance_id = "${module.ec2.instance_id}"
 }
+
+module "s3" {
+  source         = "./s3"
+  s3_bucket_name = "arvind-bucket-2022"
+}
