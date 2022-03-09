@@ -75,3 +75,7 @@ module "rds" {
   rds_subnet2 = "${module.vpc.private_subnet2}"
   vpc_id      = "${module.vpc.vpc_id}"
 }
+module "iam" {
+  source   = "./iam"
+  username = ["arvind", "sanjana", "devops"]
+}
