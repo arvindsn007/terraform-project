@@ -143,9 +143,9 @@ resource "aws_nat_gateway" "my-test-nat-gateway" {
 }
 
 # Adding Route for Transit Gateway
-
+/*
 resource "aws_route" "my-tgw-route" {
   route_table_id         = "${aws_route_table.public_route.id}"
   destination_cidr_block = "0.0.0.0/0"
   transit_gateway_id     = "${var.transit_gateway}"
-}
+}*/

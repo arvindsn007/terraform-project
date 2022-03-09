@@ -11,4 +11,4 @@ variable "default_name" {
   default = "terraform"
 }
 
-variable "transit_gateway" {}
+#variable "transit_gateway" {}
