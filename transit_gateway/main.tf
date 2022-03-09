@@ -21,7 +21,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "my-test-transit-gateway-attac
   vpc_id             = "${var.vpc_id}"
   dns_support        = "enable"
 
-  subnet_ids = ["${var.public_subnet1}","${var.public_subnet2}"]
+  subnet_ids = ["${var.public_subnet[0]}","${var.public_subnet[1]}"]
 
   tags =  {
     Name = "my-test-tgw-vpc-attachment"

@@ -44,3 +44,14 @@ module "auto_scaling" {
   subnet2          = "${module.vpc.subnet2}"
   target_group_arn = "${module.alb.alb_target_group_arn}"
 }
+
+module "sns_topic" {
+  source       = "./sns"
+  alarms_email = "arvindsn.upsc@gmail.com"
+}
+
+module "cloudwatch" {
+  source      = "./cloudwatch"
+  sns_topic   = "${module.sns_topic.sns_arn}"
+  instance_id = "${module.ec2.instance_id}"
+}
