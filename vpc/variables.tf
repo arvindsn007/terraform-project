@@ -10,4 +10,5 @@ variable "private_cidrs" {
 variable "default_name" {
   default = "terraform"
 }
+
 variable "transit_gateway" {}

@@ -16,3 +16,12 @@ module "transit_gateway" {
   public_subnet1 = "${module.vpc.subnet1}"
   public_subnet2 = "${module.vpc.subnet2}"
 }
+
+module "ec2" {
+  source         = "./ec2"
+  redhat-ami     = "ami-06a0b4e3b7eb7a300"
+  my_public_key  = "./id_rsa.pub"
+  instance_type  = "t2.micro"
+  security_group = "${module.vpc.security_group}"
+  subnets        = "${module.vpc.public_subnets}"
+}
